@@ -96,9 +96,6 @@ export default function UploadOneVideoPage() {
             <Link href="/" className="text-white/70 hover:text-white transition-colors">
               Home
             </Link>
-            <Link href="/pages/pre-analyzer" className="text-white/70 hover:text-white transition-colors">
-              Pre-Analyzer
-            </Link>
             <Link href="/pages/saved-videos" className="text-white/70 hover:text-white transition-colors">
               Library
             </Link>
@@ -192,7 +189,7 @@ export default function UploadOneVideoPage() {
                   </button>
 
                   <Link
-                    href="/pages/pre-analyzer"
+                    href="/"
                     className="btn-secondary flex items-center gap-2 text-lg px-8 py-4"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

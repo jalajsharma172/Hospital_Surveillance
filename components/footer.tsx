@@ -30,7 +30,6 @@ export default function Footer() {
           <h3 className="text-sm font-semibold text-white/40 uppercase tracking-widest">Platform</h3>
           <ul className="flex flex-col gap-3 text-sm text-white/70">
             <li><Link href="/surveillance" className="hover:text-white transition-colors">Security Dashboard</Link></li>
-            <li><Link href="/pre-analyzer" className="hover:text-white transition-colors">AI Analyzer</Link></li>
             <li><Link href="/realtime" className="hover:text-white transition-colors">Live Feed</Link></li>
             <li><Link href="/library" className="hover:text-white transition-colors">Incident Library</Link></li>
           </ul>

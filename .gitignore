@@ -51,3 +51,5 @@ hawkwatch-mobile/node_modules/
 .env.local
 
 /hawkwatch-mobile
+python_backend/venv/
+python_backend/venv_win/

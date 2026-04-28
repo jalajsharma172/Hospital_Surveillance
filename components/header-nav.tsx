@@ -13,10 +13,9 @@ import { usePathname } from "next/navigation"
 
 const navItems = [
   { href: "/surveillance", label: "Monitor",   icon: BarChart2,  badge: null },
-  { href: "/pre-analyzer", label: "Analyze",   icon: Zap,        badge: "AI" },
   { href: "/upload",       label: "Upload",    icon: Video,      badge: null },
   { href: "/realtime",     label: "Live Feed", icon: PlaySquare, badge: "LIVE" },
-  { href: "/library",      label: "Incidents", icon: FolderOpen, badge: null },
+  { href: "/library",      label: "demo",      icon: FolderOpen, badge: null },
 ]
 
 export function HeaderNav() {
