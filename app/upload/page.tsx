@@ -86,7 +86,8 @@ export default function UploadPage() {
         const frame = await captureFrame(video, time)
         if (frame) {
           try {
-            if (time > 0) await new Promise(r => setTimeout(r, 2000));
+            const delayMs = demoTimestamps ? 4500 : 2000;
+            if (time > 0) await new Promise(r => setTimeout(r, delayMs));
             
             if (demoTimestamps) {
               // DEMO MODE: Fake analysis using pre-computed JSON
