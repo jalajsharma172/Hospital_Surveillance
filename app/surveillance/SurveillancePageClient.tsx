@@ -537,60 +537,6 @@ export default function SurveillancePageClient() {
               </div>
             </div>
 
-            {/* System Stats */}
-            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-4 space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-500">System Overview</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              </div>
-              <StatsOverview />
-              <div className="grid grid-cols-2 gap-3 pt-1 border-t border-neutral-800">
-                {[
-                  { label: "Active Incidents", value: criticalCount, color: "text-red-400" },
-                  { label: "Uptime", value: "99.9%", color: "text-emerald-400" },
-                  { label: "Cameras Live", value: `${activeCamCount}/${totalCams}`, color: "text-blue-400" },
-                  { label: "Staff Monitored", value: "47", color: "text-neutral-200" },
-                ].map(m => (
-                  <div key={m.label} className="space-y-0.5">
-                    <div className="text-[9px] font-mono uppercase tracking-widest text-neutral-600">{m.label}</div>
-                    <div className={`text-sm font-bold font-mono ${m.color}`}>{m.value}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Incident Analysis per department */}
-            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-4 space-y-3">
-              <div className="flex items-center gap-2">
-                <Activity className="w-3.5 h-3.5 text-blue-400" />
-                <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-400">Department Status</span>
-              </div>
-              <div className="space-y-2">
-                {locations.map(loc => {
-                  const locCams = allCameras.filter(c => c.deptId === loc.id)
-                  const activeCount = locCams.filter(c => activeCameraIds.has(c.id)).length
-                  const locAnalysis = analyzedEvents.filter(ev => locCams.some(c => c.name === ev.videoId))
-                  const hasAlert = locAnalysis.length > 0
-                  return (
-                    <div key={loc.id} className={`flex items-center justify-between py-2 px-3 rounded-lg border transition-colors ${hasAlert && activeCount > 0 ? "border-red-500/20 bg-red-500/5" : "border-neutral-800 bg-neutral-800/30"}`}>
-                      <div className="flex items-center gap-2 min-w-0">
-                        <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${activeCount > 0 ? hasAlert ? "bg-red-500 animate-pulse" : "bg-emerald-500" : "bg-neutral-700"}`} />
-                        <span className="text-[10px] font-mono text-neutral-400 truncate">{loc.name}</span>
-                      </div>
-                      <div className="flex items-center gap-2 flex-shrink-0">
-                        {hasAlert && activeCount > 0 && (
-                          <span className="text-[8px] font-mono uppercase text-red-400 border border-red-500/25 bg-red-500/10 px-1.5 py-0.5 rounded">
-                            {locAnalysis[0].crimeType[0]}
-                          </span>
-                        )}
-                        <span className="text-[9px] font-mono text-neutral-600">{activeCount}/{locCams.length}</span>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-
 
           </aside>
         </div>
