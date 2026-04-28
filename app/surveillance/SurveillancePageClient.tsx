@@ -184,7 +184,7 @@ export default function SurveillancePageClient() {
   }).length
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-neutral-300 relative flex flex-col pt-16 font-sans">
+    <div className="min-h-screen bg-[#09090b] text-neutral-300 relative flex flex-col font-sans">
       {/* Grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
 
@@ -230,42 +230,7 @@ export default function SurveillancePageClient() {
           {/* ── LEFT: Camera grid + selector ─────────────────────────────── */}
           <div className="xl:col-span-9 space-y-6">
 
-            {/* ── Alert Ticker Strip ──────────────────────────────────────────── */}
-          <div className="mb-6 rounded-xl overflow-hidden border border-red-500/15 bg-red-500/[0.04]">
-            <div className="flex items-center">
-              <div className="flex-shrink-0 flex items-center gap-2 px-3 py-2 bg-red-500/10 border-r border-red-500/15">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
-                <span className="text-[9px] font-mono uppercase tracking-widest text-red-400 whitespace-nowrap">Alert Feed</span>
-              </div>
-              <div className="flex-1 overflow-hidden ticker-wrap py-2">
-                <div className="ticker-content">
-                  {[
-                    "🔴 HIGH PRIORITY · Patient aggression reported in ER Triage Zone A",
-                    "🟡 WARNING · Staff negligence flagged in Ward B nursing station",
-                    "🔴 CRITICAL · Unauthorized access attempt at ICU restricted zone",
-                    "🟡 NOTICE · Overcrowding detected in Emergency Waiting Area — 14 persons",
-                    "🔴 HIGH PRIORITY · Patient fall risk detected in Ward C corridor",
-                    "🟡 WARNING · Pharmacy storage access outside authorized hours",
-                    "🔴 CRITICAL · Fire/smoke detector triggered near Server Room",
-                    "🟢 RESOLVED · Security team responded to incident in Gate-Main — 2m ago",
-                    /* duplicate for seamless loop */
-                    "🔴 HIGH PRIORITY · Patient aggression reported in ER Triage Zone A",
-                    "🟡 WARNING · Staff negligence flagged in Ward B nursing station",
-                    "🔴 CRITICAL · Unauthorized access attempt at ICU restricted zone",
-                    "🟡 NOTICE · Overcrowding detected in Emergency Waiting Area — 14 persons",
-                    "🔴 HIGH PRIORITY · Patient fall risk detected in Ward C corridor",
-                    "🟡 WARNING · Pharmacy storage access outside authorized hours",
-                    "🔴 CRITICAL · Fire/smoke detector triggered near Server Room",
-                    "🟢 RESOLVED · Security team responded to incident in Gate-Main — 2m ago",
-                  ].map((msg, i) => (
-                    <span key={i} className="inline-flex items-center text-[10px] font-mono text-neutral-400 mr-10">
-                      {msg}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+
             <PluginManager />
 
             <div className="bg-neutral-900/80 border border-neutral-800 rounded-xl overflow-hidden mt-6">
@@ -279,10 +244,7 @@ export default function SurveillancePageClient() {
                   className="flex items-center gap-2 flex-1 cursor-pointer"
                 >
                   <Filter className="w-3.5 h-3.5 text-blue-400" />
-                  <span className="text-xs font-mono uppercase tracking-widest text-neutral-300">Camera Selection</span>
-                  <span className="ml-1 px-1.5 py-0.5 rounded bg-blue-500/15 border border-blue-500/20 text-[9px] font-mono text-blue-400">
-                    {activeCamCount}/{totalCams} active
-                  </span>
+                  <span className="text-xs font-mono uppercase tracking-widest text-neutral-300">Filter</span>
                 </div>
                 {/* Action buttons — NOT inside the toggle button */}
                 <div className="flex items-center gap-2">
