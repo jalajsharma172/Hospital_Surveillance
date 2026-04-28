@@ -93,19 +93,7 @@ export default async function Home() {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black" />
 
-        {/* Live ribbon */}
-        <div className="absolute top-20 flex items-center gap-3 px-4 py-1 border border-red-500/30 bg-black/60 backdrop-blur-sm z-10">
-          <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-          <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-red-400">Hospital Security Intelligence — Live</span>
-        </div>
-
         <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
-          {/* Badge */}
-          <div className="mb-6 border border-white/15 bg-white/5 backdrop-blur-sm rounded-full px-5 py-2">
-            <span className="text-xs sm:text-sm font-medium bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-              🏥 Protecting Doctors · Monitoring Staff · Securing Patients
-            </span>
-          </div>
 
           {/* Headline */}
           <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight">
@@ -122,12 +110,32 @@ export default async function Home() {
           </p>
 
           {/* CTAs */}
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 items-center">
-            <Link href="/sign-up" className="btn-primary px-8 py-3 text-base font-semibold">
-              Get Started Free
+          <div className="mt-10 flex flex-col sm:flex-row gap-5 items-center justify-center w-full">
+            <Link 
+              href="/surveillance" 
+              className="relative group px-9 py-4 rounded-full font-bold text-white tracking-wide overflow-hidden transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_40px_-10px_rgba(59,130,246,0.6)] hover:shadow-[0_0_60px_-10px_rgba(59,130,246,0.8)]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <span className="relative z-10 flex items-center justify-center gap-2 text-[15px]">
+                SURVILANCE
+                <svg className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
             </Link>
-            <Link href="/surveillance" className="btn-secondary px-8 py-3 text-base font-semibold">
-              View Dashboard
+            
+            <Link 
+              href="/library" 
+              className="relative group px-9 py-4 rounded-full font-bold text-white tracking-wide overflow-hidden transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-white/20 hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.1)]"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2.5 text-[15px] text-white/90 group-hover:text-white">
+                <svg className="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                DEMO
+              </span>
             </Link>
           </div>
 
