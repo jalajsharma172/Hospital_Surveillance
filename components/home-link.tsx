@@ -21,8 +21,8 @@ export default function HomeLink() {
       onClick={handleClick}
       className="flex items-center gap-2 group"
     >
-      <div className="flex items-center justify-center w-7 h-7 bg-blue-600/20 border border-blue-500/40 rounded-sm group-hover:bg-blue-600/30 transition-colors">
-        <Shield className="w-4 h-4 text-blue-400" />
+      <div className="flex items-center justify-center w-8 h-8 rounded-md group-hover:scale-105 transition-all overflow-hidden border border-white/10 shadow-lg">
+        <img src="/icon.png" alt="Logo" className="w-full h-full object-cover" />
       </div>
       <div className="flex items-baseline gap-0.5">
         <span className="text-sm font-bold tracking-tight text-neutral-100 font-mono">SURAKSHA</span>
