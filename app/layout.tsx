@@ -62,17 +62,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                     <HeaderNav />
                   </div>
 
-                  {/* Right: Status + auth */}
-                  <div className="flex items-center gap-3">
-                    {/* System status pill */}
-                    <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/[0.06]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0 status-dot-live" />
-                      <span className="text-[9px] font-mono uppercase tracking-[0.18em] text-emerald-400 leading-none">
-                        System Secure
-                      </span>
-                    </div>
-                    <HeaderAuth />
-                  </div>
+
                 </div>
               </nav>
 
